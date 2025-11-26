@@ -68,13 +68,13 @@ export default function App() {
 
   // Show Dashboard if authenticated
   return (
-    <div className={`h-screen flex overflow-hidden ${isDarkTheme ? 'bg-[#0a0a0a]' : 'bg-gray-50'}`}>
+    <div className={`min-h-screen flex ${isDarkTheme ? 'bg-[#0a0a0a]' : 'bg-gray-50'}`}>
       {/* Show default sidebar only when NOT in video editor mode */}
       {!isVideoEditorMode && (
         <Sidebar isDarkTheme={isDarkTheme} currentPage={currentPage} setCurrentPage={setCurrentPage} onLogout={handleLogout} />
       )}
       
-      <div className={`flex-1 flex flex-col overflow-hidden ${!isVideoEditorMode ? 'ml-[60px] sm:ml-[80px] lg:ml-[200px]' : ''}`}>
+      <div className={`flex-1 flex flex-col ${!isVideoEditorMode ? 'ml-[60px] sm:ml-[80px] lg:ml-[200px]' : ''}`}>
         {/* Show header only when NOT in video editor mode */}
         {!isVideoEditorMode && (
           <Header 
@@ -85,7 +85,7 @@ export default function App() {
           />
         )}
         
-        <main className={`flex-1 overflow-hidden ${!isVideoEditorMode ? '' : 'h-screen'}`}>
+        <main className={`flex-1 ${!isVideoEditorMode ? '' : 'h-screen'}`}>
           {currentPage === 'home' && <Dashboard isDarkTheme={isDarkTheme} userData={userData} />}
           {currentPage === 'ai-translate' && <AITranslate isDarkTheme={isDarkTheme} />}
           {currentPage === 'tts-training' && <TTSTraining isDarkTheme={isDarkTheme} />}

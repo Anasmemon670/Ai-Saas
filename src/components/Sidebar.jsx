@@ -27,14 +27,14 @@ export function Sidebar({ isDarkTheme, currentPage, setCurrentPage, onLogout }) 
 
   return (
     <aside 
-      className={`fixed left-0 top-0 h-screen w-[60px] sm:w-[80px] lg:w-[200px] border-r overflow-y-hidden overflow-x-hidden z-40 ${ 
+      className={`fixed left-0 top-0 h-full w-[60px] sm:w-[80px] lg:w-[200px] border-r overflow-y-hidden z-40 ${ 
         isDarkTheme 
           ? 'bg-[#0a0a0a] border-gray-800' 
           : 'bg-white border-gray-200'
       }`}
     >
       {/* Top border matching header height */}
-      <div className={`h-[64px] sm:h-[72px] border-b flex-shrink-0 ${isDarkTheme ? 'border-gray-800' : 'border-gray-200'}`}>
+      <div className={`h-[64px] sm:h-[72px] border-b ${isDarkTheme ? 'border-gray-800' : 'border-gray-200'}`}>
         <div className="h-full flex items-center justify-center lg:justify-start px-2 sm:px-3 lg:px-4">
           <img 
             src={zebracatLogo} 
@@ -44,7 +44,7 @@ export function Sidebar({ isDarkTheme, currentPage, setCurrentPage, onLogout }) 
         </div>
       </div>
       
-      <div className="p-2 sm:p-3 lg:p-4 overflow-hidden">
+      <div className="p-2 sm:p-3 lg:p-4">
         
         {/* Menu Items */}
         <nav className="space-y-1">

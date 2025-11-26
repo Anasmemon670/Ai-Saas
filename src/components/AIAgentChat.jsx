@@ -222,7 +222,7 @@ export function AIAgentChat({ isDarkTheme, setCurrentPage }) {
       </div>
 
       {/* Messages Area - Scrollable Container */}
-      <div className="flex-1 overflow-y-auto overflow-x-hidden min-h-0 p-6">
+      <div className="flex-1 overflow-y-auto overflow-x-hidden min-h-0 p-6" style={{ maxHeight: 'calc(100vh - 200px)' }}>
         <div className="max-w-4xl mx-auto space-y-4">
           {messages.map((message) => (
             <motion.div
