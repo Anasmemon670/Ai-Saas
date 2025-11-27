@@ -82,6 +82,7 @@ export default function App() {
             toggleTheme={toggleTheme}
             onLogout={handleLogout}
             userData={userData}
+            currentPage={currentPage}
           />
         )}
         
@@ -100,7 +101,7 @@ export default function App() {
           )}
           {currentPage === 'ai-agent' && <AIAgent isDarkTheme={isDarkTheme} setCurrentPage={setCurrentPage} />}
           {currentPage === 'ai-agent-chat' && <AIAgentChat isDarkTheme={isDarkTheme} setCurrentPage={setCurrentPage} />}
-          {currentPage === 'system-settings' && <SystemSettings isDarkTheme={isDarkTheme} />}
+          {currentPage === 'system-settings' && <SystemSettings isDarkTheme={isDarkTheme} userData={userData} toggleTheme={toggleTheme} />}
         </main>
       </div>
     </div>

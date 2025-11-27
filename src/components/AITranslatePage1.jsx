@@ -1,10 +1,7 @@
-import { useState } from 'react';
-import { ChevronDown, Link as LinkIcon, Upload, Maximize2 } from 'lucide-react';
+import { ChevronDown, Upload, Maximize2 } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export function AITranslatePage1({ isDarkTheme, setStep }) {
-  const [link, setLink] = useState('');
-
   const handleUpload = () => {
     setStep(2);
   };
@@ -13,20 +10,11 @@ export function AITranslatePage1({ isDarkTheme, setStep }) {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="p-4 sm:p-6 lg:p-8"
+      className="p-4 sm:p-6 lg:p-8 h-full flex flex-col"
     >
-      {/* Page Title */}
-      <div className="mb-6 sm:mb-8">
-        <h1 className={`text-2xl sm:text-3xl mb-2 ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>
-          AI Translate
-        </h1>
-        <p className={`text-sm sm:text-base ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>
-          Live Translate
-        </p>
-      </div>
 
       {/* Main Content Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 flex-1 min-h-0">
         {/* Left Column - Form Controls */}
         <div className="space-y-4 sm:space-y-6">
           {/* Dropdowns Row 1 */}
@@ -103,8 +91,41 @@ export function AITranslatePage1({ isDarkTheme, setStep }) {
             </div>
           </div>
 
+          {/* Upload Video Section */}
+          <div className={`p-4 sm:p-6 rounded-xl border ${ 
+            isDarkTheme ? 'bg-[#141414] border-gray-800' : 'bg-white border-gray-300'
+          }`}>
+            <h3 className={`text-xs sm:text-sm mb-2 ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>
+              Upload Video
+            </h3>
+            <p className={`text-xs mb-3 sm:mb-4 ${isDarkTheme ? 'text-gray-500' : 'text-gray-500'}`}>
+              Drag or choose file
+            </p>
+            <div className="flex flex-col sm:flex-row gap-2">
+              <input
+                type="text"
+                placeholder="Click the choose file and choose desired .MOV file"
+                className={`flex-1 px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg border text-xs sm:text-sm ${ 
+                  isDarkTheme
+                    ? 'bg-[#0a0a0a] border-gray-800 text-white placeholder-gray-600'
+                    : 'bg-gray-50 border-gray-300 text-gray-900 placeholder-gray-400'
+                }`}
+                readOnly
+              />
+              <button 
+                onClick={handleUpload}
+                className="px-4 sm:px-6 py-2 sm:py-2.5 bg-red-500 hover:bg-red-600 text-white rounded-lg text-xs sm:text-sm transition-colors whitespace-nowrap"
+              >
+                Choose
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Column - Language Dropdowns and Video Preview Areas */}
+        <div className="flex flex-col h-full">
           {/* Language Dropdowns */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4 sm:mb-6 flex-shrink-0">
             {/* Video Language */}
             <div>
               <label className={`block text-xs sm:text-sm mb-2 ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>
@@ -154,88 +175,17 @@ export function AITranslatePage1({ isDarkTheme, setStep }) {
             </div>
           </div>
 
-          {/* Add Link Section */}
-          <div className={`p-4 sm:p-6 rounded-xl border ${ 
-            isDarkTheme ? 'bg-[#141414] border-gray-800' : 'bg-white border-gray-300'
-          }`}>
-            <h3 className={`text-xs sm:text-sm mb-2 ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>
-              Add Link
-            </h3>
-            <p className={`text-xs mb-3 sm:mb-4 ${isDarkTheme ? 'text-gray-500' : 'text-gray-500'}`}>
-              Easily add videos by pasting a link
-            </p>
-            <div className="flex flex-col sm:flex-row gap-2">
-              <input
-                type="text"
-                value={link}
-                onChange={(e) => setLink(e.target.value)}
-                placeholder="Enter https://www.youtube.com/embed/T_JebdqJbk..."
-                className={`flex-1 px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg border text-xs sm:text-sm ${ 
-                  isDarkTheme
-                    ? 'bg-[#0a0a0a] border-gray-800 text-white placeholder-gray-600'
-                    : 'bg-gray-50 border-gray-300 text-gray-900 placeholder-gray-400'
-                }`}
-              />
-              <button className="px-4 sm:px-6 py-2 sm:py-2.5 bg-green-500 hover:bg-green-600 text-white rounded-lg text-xs sm:text-sm transition-colors whitespace-nowrap">
-                Create
-              </button>
-            </div>
-          </div>
-
-          {/* Upload Video Section */}
-          <div className={`p-4 sm:p-6 rounded-xl border ${ 
-            isDarkTheme ? 'bg-[#141414] border-gray-800' : 'bg-white border-gray-300'
-          }`}>
-            <h3 className={`text-xs sm:text-sm mb-2 ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>
-              Upload Video
-            </h3>
-            <p className={`text-xs mb-3 sm:mb-4 ${isDarkTheme ? 'text-gray-500' : 'text-gray-500'}`}>
-              Drag or choose file
-            </p>
-            <div className="flex flex-col sm:flex-row gap-2">
-              <input
-                type="text"
-                placeholder="Click the choose file and choose desired .MOV file"
-                className={`flex-1 px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg border text-xs sm:text-sm ${ 
-                  isDarkTheme
-                    ? 'bg-[#0a0a0a] border-gray-800 text-white placeholder-gray-600'
-                    : 'bg-gray-50 border-gray-300 text-gray-900 placeholder-gray-400'
-                }`}
-                readOnly
-              />
-              <button 
-                onClick={handleUpload}
-                className="px-4 sm:px-6 py-2 sm:py-2.5 bg-red-500 hover:bg-red-600 text-white rounded-lg text-xs sm:text-sm transition-colors whitespace-nowrap"
-              >
-                Choose
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Right Column - Video Preview Areas */}
-        <div className="space-y-4">
-          {/* Video Preview 1 */}
-          <div className={`aspect-video rounded-xl border flex items-center justify-center ${ 
-            isDarkTheme ? 'bg-gray-800 border-gray-700' : 'bg-gray-200 border-gray-300'
-          }`}>
-            <div className="text-center">
-              <Maximize2 className={`w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2 sm:mb-3 ${isDarkTheme ? 'text-gray-600' : 'text-gray-400'}`} />
-              <p className={`text-xs sm:text-sm ${isDarkTheme ? 'text-gray-500' : 'text-gray-500'}`}>
-                Video Preview
-              </p>
-            </div>
-          </div>
-
-          {/* Video Preview 2 */}
-          <div className={`aspect-video rounded-xl border flex items-center justify-center ${ 
-            isDarkTheme ? 'bg-gray-800 border-gray-700' : 'bg-gray-200 border-gray-300'
-          }`}>
-            <div className="text-center">
-              <Maximize2 className={`w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2 sm:mb-3 ${isDarkTheme ? 'text-gray-600' : 'text-gray-400'}`} />
-              <p className={`text-xs sm:text-sm ${isDarkTheme ? 'text-gray-500' : 'text-gray-500'}`}>
-                Video Preview
-              </p>
+          {/* Video Preview Area - Large Box */}
+          <div className="flex-1 flex flex-col min-h-0">
+            <div className={`w-full h-full min-h-[500px] rounded-xl border flex items-center justify-center ${ 
+              isDarkTheme ? 'bg-gray-800 border-gray-700' : 'bg-gray-200 border-gray-300'
+            }`}>
+              <div className="text-center">
+                <Maximize2 className={`w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 ${isDarkTheme ? 'text-gray-600' : 'text-gray-400'}`} />
+                <p className={`text-base sm:text-lg ${isDarkTheme ? 'text-gray-500' : 'text-gray-500'}`}>
+                  Video Preview
+                </p>
+              </div>
             </div>
           </div>
         </div>
