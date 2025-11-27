@@ -1,154 +1,85 @@
-🦓 ZebraCat — AI SaaS Platform
+📌 ZebraCat SaaS – AI Powered Platform
 
-A modern, scalable, and powerful AI-driven SaaS platform providing Text-to-Speech, Speech-to-Text, Voice Cloning, AI Agents, and more — all inside one beautifully designed dashboard.
+ZebraCat is a modern, AI-driven SaaS platform built to provide powerful automation tools, including AI Agents, Text-to-Speech (TTS), Speech-to-Text (STT), Voice Cloning, and Smart Translation.
+Designed with a sleek, responsive, and professional UI/UX, ZebraCat ensures smooth workflows and a premium experience for all users.
 
-Live Demo → https://ai-saas-puce-five.vercel.app/
+🚀 Features
+🔹 Dashboard
 
-🚀 Overview
+A clean and intuitive dashboard serving as the central navigation hub, giving users a complete overview of tools & activities.
 
-ZebraCat is a next-generation AI SaaS platform that brings multiple AI-powered tools together with a clean, intuitive UI.
-It focuses on performance, accessibility, and real-time AI interactions using modern web technologies.
+🔹 AI Translate
 
-The platform includes:
+Live text translation
 
-AI Agents (create, manage, and interact)
+Voice-to-voice translation
 
-TTS (Text to Speech)
+Video language & subtitle settings
 
-STT (Speech to Text)
+🔹 AI Agents
 
-Voice Translation
+Create custom AI agents
 
-Voice Cloning
+Manage tasks, presets & instructions
 
-Global Settings
+All UI buttons and interactions fully functional
 
-API Integrations
+🔹 Settings
 
-User Dashboard & Profile Controls
+Profile customization
 
-🎯 Features
-📊 Dashboard
+API key management
 
-A clean, responsive hub that gives users a quick overview and easy navigation across all AI tools.
+Account security options
 
-🌐 AI Translate
+Theme & appearance customization
 
-Live translation
+🔹 Integrations
 
-Speech translation
+Seamless connections with external APIs for enhanced AI capabilities.
 
-Video language conversion
+🌐 Live Demo
 
-Multi-language support
-
-Real-time processing
-
-🤖 AI Agents
-
-Create and manage AI agents for:
-
-Customer support
-
-Creative writing
-
-Automation workflows
-
-Personal assistants
-
-Each agent includes customizable:
-
-Role / Purpose
-
-Tone & Voice
-
-Memory settings
-
-Token limits
-
-🎙️ Speech Tools
-
-Text-to-Speech (TTS): High-quality AI voice output
-
-Speech-to-Text (STT): Accurate transcriptions
-
-Voice Cloning: Clone and generate voice models
-
-⚙️ Settings
-
-Profile & Account management
-
-API key generation
-
-Security settings
-
-Light/Dark mode
-
-Appearance customization
-
-🔗 Integrations
-
-Supports external APIs for seamless workflow automation and data exchange.
-
-🌍 Live Demo
-
-Experience ZebraCat here:
+Try the deployed version here:
 👉 https://ai-saas-puce-five.vercel.app/
 
-🛠️ Tech Stack
+📦 Tech Stack
 
-React.js — Frontend Framework
+React.js
 
-Tailwind CSS — Styling
+Tailwind CSS
 
-Node.js — Runtime
+Node.js
 
-Vercel — Deployment
+Vercel Deployment
 
-AI APIs (local or cloud-based integrations)
+Fully client-side UI (No backend required for UI interaction)
 
-📦 Getting Started
-Prerequisites
+🛠️ Setup Instructions
 
-Make sure you have installed:
+Clone the repository
 
-Node.js (LTS recommended)
+git clone <repository-url>
 
-npm or yarn
 
-Git
+Install dependencies
 
-Installation
-# Clone the repository
-git clone <repo-url>
-
-# Navigate into the project
-cd zebra-cat
-
-# Install dependencies
 npm install
 
-# Start the development server
+
+Start the development server
+
 npm start
 
 
-The app will run at:
-http://localhost:3000/
+Open in browser:
+http://localhost:3000
 
 🤝 Contributing
 
-Contributions are welcome!
-Feel free to open:
-
-Issues
-
-Feature requests
-
-Pull requests
-
-Let’s make ZebraCat even better together.
+Contributions, issues, and feature requests are welcome!
+Feel free to submit a pull request or create an issue.
 
 📄 License
 
-This project is available under your selected license.
-Add license file if required.
+This project is licensed under the MIT License.
