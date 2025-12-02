@@ -1,4 +1,4 @@
-import { Sun, Moon, LogOut } from 'lucide-react';
+import { Sun, Moon, Languages } from 'lucide-react';
 
 export function Header({ isDarkTheme, toggleTheme, onLogout, userData, currentPage }) {
   const userName = userData?.name || 'User';
@@ -17,14 +17,19 @@ export function Header({ isDarkTheme, toggleTheme, onLogout, userData, currentPa
       {/* User Greeting - Left Side */}
       <div className="flex flex-col">
         {isDubbingPage ? (
-          <>
-            <h1 className={`text-2xl sm:text-3xl mb-0 leading-none ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>
-              AI Translate
-            </h1>
-            <p className={`text-sm sm:text-base mt-1 ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>
-              Live Translate
-            </p>
-          </>
+          <div className="flex items-center gap-2 sm:gap-3">
+            <div className={`w-8 h-8 sm:w-9 sm:h-9 rounded-lg flex items-center justify-center ${isDarkTheme ? 'bg-yellow-400' : 'bg-yellow-400'}`}>
+              <Languages className={`w-5 h-5 sm:w-6 sm:h-6 text-black`} />
+            </div>
+            <div className="flex flex-col">
+              <h1 className={`text-2xl sm:text-3xl mb-0 leading-none ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>
+                AI Translate
+              </h1>
+              <p className={`text-sm sm:text-base mt-1 ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>
+                Live Translate
+              </p>
+            </div>
+          </div>
         ) : (
           <>
             <h1 className={`text-lg sm:text-xl mb-0 leading-none ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>
@@ -67,21 +72,6 @@ export function Header({ isDarkTheme, toggleTheme, onLogout, userData, currentPa
           </div>
         )}
 
-        {/* Logout Button */}
-        {onLogout && (
-          <button
-            onClick={onLogout}
-            className={`p-1.5 sm:p-2 rounded-lg transition-colors ${ 
-              isDarkTheme 
-                ? 'hover:bg-gray-800 text-gray-400 hover:text-red-400' 
-                : 'hover:bg-gray-100 text-gray-600 hover:text-red-600'
-            }`}
-            aria-label="Logout"
-            title="Logout"
-          >
-            <LogOut className="w-4 h-4 sm:w-5 sm:h-5" />
-          </button>
-        )}
       </div>
     </header>
   );
