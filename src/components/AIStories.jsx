@@ -17,24 +17,6 @@ export function AIStories({ isDarkTheme }) {
     <div className="h-full flex flex-col">
       {/* Page Header */}
       <div className={`px-6 py-6 border-b ${isDarkTheme ? 'border-gray-800' : 'border-gray-200'}`}>
-        <div className="flex items-center gap-3 mb-6">
-          <div className={`p-2 rounded-lg ${isDarkTheme ? 'bg-[#141414]' : 'bg-gray-100'}`}>
-            <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded flex items-center justify-center">
-              <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z" />
-              </svg>
-            </div>
-          </div>
-          <div>
-            <h1 className={`text-2xl ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>
-              AI - Storie
-            </h1>
-            <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>
-              Image to Video
-            </p>
-          </div>
-        </div>
-
         {/* Control Row */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6">
           {/* Select Voice */}

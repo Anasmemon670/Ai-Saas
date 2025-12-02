@@ -1,10 +1,11 @@
-import { Sun, Moon, Languages } from 'lucide-react';
+import { Sun, Moon, Languages, Sparkles } from 'lucide-react';
 
 export function Header({ isDarkTheme, toggleTheme, onLogout, userData, currentPage }) {
   const userName = userData?.name || 'User';
   const userEmail = userData?.email || '';
   const userInitial = userName.charAt(0).toUpperCase();
   const isDubbingPage = currentPage === 'ai-translate';
+  const isAIStoriesPage = currentPage === 'ai-stories';
   
   return (
     <header 
@@ -21,14 +22,18 @@ export function Header({ isDarkTheme, toggleTheme, onLogout, userData, currentPa
             <div className={`w-8 h-8 sm:w-9 sm:h-9 rounded-lg flex items-center justify-center ${isDarkTheme ? 'bg-yellow-400' : 'bg-yellow-400'}`}>
               <Languages className={`w-5 h-5 sm:w-6 sm:h-6 text-black`} />
             </div>
-            <div className="flex flex-col">
-              <h1 className={`text-2xl sm:text-3xl mb-0 leading-none ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>
-                AI Translate
-              </h1>
-              <p className={`text-sm sm:text-base mt-1 ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>
-                Live Translate
-              </p>
+            <h1 className={`text-2xl sm:text-3xl mb-0 leading-none ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>
+              AI Translate
+            </h1>
+          </div>
+        ) : isAIStoriesPage ? (
+          <div className="flex items-center gap-2 sm:gap-3">
+            <div className={`w-8 h-8 sm:w-9 sm:h-9 rounded-lg flex items-center justify-center ${isDarkTheme ? 'bg-yellow-400' : 'bg-yellow-400'}`}>
+              <Sparkles className={`w-5 h-5 sm:w-6 sm:h-6 text-black`} />
             </div>
+            <h1 className={`text-2xl sm:text-3xl mb-0 leading-none ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>
+              AI Stories
+            </h1>
           </div>
         ) : (
           <>
@@ -60,17 +65,15 @@ export function Header({ isDarkTheme, toggleTheme, onLogout, userData, currentPa
           {isDarkTheme ? <Sun className="w-4 h-4 sm:w-5 sm:h-5" /> : <Moon className="w-4 h-4 sm:w-5 sm:h-5" />}
         </button>
 
-        {/* Profile - Hide on Dubbing page */}
-        {!isDubbingPage && (
-          <div className="flex items-center gap-2 sm:gap-3">
-            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-yellow-400 flex items-center justify-center">
-              <span className="text-black text-sm sm:text-base font-semibold">{userInitial}</span>
-            </div>
-            <span className={`hidden sm:inline text-sm md:text-base ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>
-              {userName}
-            </span>
+        {/* Profile */}
+        <div className="flex items-center gap-2 sm:gap-3">
+          <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-yellow-400 flex items-center justify-center">
+            <span className="text-black text-sm sm:text-base font-semibold">{userInitial}</span>
           </div>
-        )}
+          <span className={`hidden sm:inline text-sm md:text-base ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>
+            {userName}
+          </span>
+        </div>
 
       </div>
     </header>
